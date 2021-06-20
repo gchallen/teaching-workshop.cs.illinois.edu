@@ -1,10 +1,4 @@
 module.exports = {
-  images: {
-    domains: ["ws.engr.illinois.edu", "www.seltzer.com"],
-  },
+  basePath: "/teaching-workshop.cs.illinois.edu",
+  assetPrefix: "/teaching-workshop.cs.illinois.edu/",
 }
-const withOptimizedImages = require("next-optimized-images")
-
-module.exports = withOptimizedImages({
-  handleImages: ["jpeg", "png"],
-})
