@@ -1,0 +1,51 @@
+/* eslint-disable @next/next/no-img-element */
+import { useMemo } from "react"
+
+const members = [
+  {
+    name: "Geoffrey Challen",
+    position: "Teaching Associate Professor",
+    photo: 74521,
+  },
+  {
+    name: "Yael Gertner",
+    position: "Teaching Assistant Professor",
+    photo: 100582,
+  },
+  {
+    name: "Michael Nowak",
+    position: "Teaching Assistant Professor",
+    photo: 106852,
+  },
+  {
+    name: "Brad Solomon",
+    position: "Teaching Assistant Professor",
+    photo: 106751,
+  },
+]
+
+const OrganizingCommittee: React.FC = () => {
+  const contents = useMemo(
+    () =>
+      members.map(({ name, position, photo }, i) => (
+        <div key={i} style={{ display: "flex", flexDirection: "row", padding: "8px 0" }}>
+          <div style={{ position: "relative", width: 100, height: 100 }}>
+            <img
+              src={`https://ws.engr.illinois.edu/directory/viewphoto.aspx?id=${photo}&s=300&type=portrait`}
+              width={100}
+              height={100}
+              style={{ objectFit: "contain", objectPosition: "center top" }}
+              alt={`Photo of ${name}`}
+            />
+          </div>
+          <div>
+            <div className="h4">{name}</div>
+            {position}, University of Illinois
+          </div>
+        </div>
+      )),
+    []
+  )
+  return <div style={{ display: "flex", flexDirection: "column", marginTop: 8 }}>{contents}</div>
+}
+export default OrganizingCommittee
