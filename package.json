@@ -5,7 +5,7 @@
   "scripts": {
     "pre:build": "node bin/build.mjs mdx output --build --clean",
     "build": "next build",
-    "export": "next build && next export -o dist",
+    "export": "NEXT_PUBLIC_BASE_PATH=/teaching-workshop.cs.illinois.edu next build && NEXT_PUBLIC_BASE_PATH=/teaching-workshop.cs.illinois.edu next export -o dist && touch dist/.nojekyll",
     "lint": "next lint",
     "ncu": "ncu",
     "serve": "next start",
@@ -17,7 +17,8 @@
   "dependencies": {
     "next": "11.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-lazyload": "^3.2.0"
   },
   "devDependencies": {
     "@types/argparse": "^2.0.8",
@@ -25,6 +26,7 @@
     "@types/fs-extra": "^9.0.11",
     "@types/node": "^15.12.4",
     "@types/react": "17.0.11",
+    "@types/react-lazyload": "^3.1.0",
     "@types/replace-ext": "^2.0.0",
     "argparse": "^2.0.1",
     "child-process-promise": "^2.2.1",

@@ -1,3 +1,3 @@
 module.exports = {
-  basePath: "/teaching-workshop.cs.illinois.edu",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
 }

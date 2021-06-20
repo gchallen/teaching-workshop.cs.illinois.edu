@@ -81,18 +81,13 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-.iframe-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 1200px;
-}
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+a {
+  text-decoration: none;
+  color: #DD3403;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: #DD3403;
+  }
 }

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useMemo } from "react"
+import LazyLoad from "react-lazyload"
 
 const members = [
   {
@@ -29,15 +30,15 @@ const OrganizingCommittee: React.FC = () => {
     () =>
       members.map(({ name, position, photo }, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "row", padding: "8px 0" }}>
-          <div style={{ position: "relative", width: 100, height: 100 }}>
+          <LazyLoad height={100}>
             <img
-              src={`https://ws.engr.illinois.edu/directory/viewphoto.aspx?id=${photo}&s=300&type=portrait`}
+              src={`https://ws.engr.illinois.edu/directory/viewphoto.aspx?id=${photo}&s=100&type=portrait`}
               width={100}
               height={100}
               style={{ objectFit: "contain", objectPosition: "center top" }}
               alt={`Photo of ${name}`}
             />
-          </div>
+          </LazyLoad>
           <div>
             <div className="h4">{name}</div>
             {position}, University of Illinois
