@@ -47,6 +47,6 @@ const OrganizingCommittee: React.FC = () => {
       )),
     []
   )
-  return <div style={{ display: "flex", flexDirection: "column", marginTop: 8 }}>{contents}</div>
+  return <div style={{ display: "flex", flexDirection: "column", marginTop: 8, textAlign: "left" }}>{contents}</div>
 }
 export default OrganizingCommittee
