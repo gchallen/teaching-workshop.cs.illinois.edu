@@ -21,7 +21,7 @@ const Wrapper: React.FC<{ frontmatter: { title: string; description: string } }>
         <img
           src={`${basePath}/logo.png`}
           width="100%"
-          alt="Illinois Computer Science Summer Teaching Workshop"
+          alt="Illinois Computer Science Summer Teaching Workshop: How the Pandemic Transformed Our Teaching, August 10 and 11, 2021"
           style={{ marginBottom: 16, marginTop: 16 }}
         />
         {children}
