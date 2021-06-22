@@ -82,10 +82,8 @@ p {
 }
 a {
   text-decoration: underline;
+  color: #111111;
   &:hover {
     text-decoration: none;
-  }
-  &:visited {
-    color: #dd3403;
   }
 }
