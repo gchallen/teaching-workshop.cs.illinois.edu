@@ -10,7 +10,6 @@ $maxTextWidth: math.div($minTextWidth, $minFontSize) * $maxFontSize;
     #{$minFontSize}px + (max(min(100vw, #{$maxTextWidth}px), #{$minTextWidth}px) - #{$minTextWidth}px) /
       (#{$maxTextWidth - $minTextWidth}) * (#{$maxFontSize - $minFontSize})
   );
-  text-align: justify;
   h1 {
     font-size: 2.5em;
   }
@@ -82,12 +81,11 @@ p {
   margin-right: auto;
 }
 a {
-  text-decoration: none;
-  color: #DD3403;
+  text-decoration: underline;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
   &:visited {
-    color: #DD3403;
+    color: #dd3403;
   }
 }
