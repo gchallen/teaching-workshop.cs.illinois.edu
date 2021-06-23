@@ -1,11 +1,28 @@
 // organize-imports-ignore
 import type { AppProps } from "next/app"
 import Head from "next/head"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
 import "./reset.css"
 import "./global.scss"
+
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string, {
+        page_path: url,
+      })
+    }
+    router.events.on("routeChangeComplete", handleRouteChange)
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Head>
