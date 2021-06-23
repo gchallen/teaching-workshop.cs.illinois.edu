@@ -17,6 +17,7 @@ const members = [
     name: "Michael Nowak",
     position: "Teaching Assistant Professor",
     photo: 106852,
+    link: "http://nowakphd.com/",
   },
   {
     name: "Brad Solomon",
@@ -28,7 +29,7 @@ const members = [
 const OrganizingCommittee: React.FC = () => {
   const contents = useMemo(
     () =>
-      members.map(({ name, position, photo }, i) => (
+      members.map(({ name, position, photo, link }, i) => (
         <div key={i} style={{ display: "flex", flexDirection: "row", padding: "8px 0" }}>
           <LazyLoad height={100}>
             <img
@@ -40,7 +41,15 @@ const OrganizingCommittee: React.FC = () => {
             />
           </LazyLoad>
           <div>
-            <div className="h4">{name}</div>
+            <div className="h4">
+              {link ? (
+                <a href={link} target="_blank" rel="noreferrer">
+                  {name}
+                </a>
+              ) : (
+                <>{name}</>
+              )}
+            </div>
             {position}, University of Illinois
           </div>
         </div>
