@@ -7,6 +7,7 @@ const members = [
     name: "Geoffrey Challen",
     position: "Teaching Associate Professor",
     photo: 74521,
+    link: "https://geoffreychallen.com"
   },
   {
     name: "Yael Gertner",
