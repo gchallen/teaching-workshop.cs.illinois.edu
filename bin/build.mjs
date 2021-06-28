@@ -63,6 +63,7 @@ export default function Page() {
   return <Content components={components} frontmatter={frontmatter} />
 }
 `.trimStart()
+  await mkdirs(path.dirname(pagePath))
   await writeFile(pagePath, pageContent)
   pages[pagePath] = true
   await writeGitIgnore()

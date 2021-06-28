@@ -3,8 +3,8 @@ import type { AppProps } from "next/app"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import "./reset.css"
-import "./global.scss"
+import "../styles/reset.css"
+import "../styles/global.scss"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
