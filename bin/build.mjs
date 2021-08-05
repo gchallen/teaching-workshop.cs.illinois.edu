@@ -10,6 +10,7 @@ import replaceExt from "replace-ext"
 import glob from "glob-promise"
 import matter from "gray-matter"
 import { exec } from "child-process-promise"
+import remarkGfm from "remark-gfm"
 
 const parser = new ArgumentParser()
 parser.add_argument("input")
@@ -31,7 +32,7 @@ async function writeGitIgnore() {
 
 async function update(source) {
   const { content, data, isEmpty } = matter(await readFile(source))
-  const contents = (await compile(content)).toString()
+  const contents = (await compile(content, { remarkPlugins: [remarkGfm] })).toString()
   const contentPath = replaceExt(path.resolve(args.output, path.relative(args.input, source)), ".js")
   const dataPath = replaceExt(path.resolve(args.output, path.relative(args.input, source)), ".json")
   const frontmatterString = Object.keys(data)

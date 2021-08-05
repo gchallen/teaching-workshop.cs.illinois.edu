@@ -88,3 +88,23 @@ a {
     color: #444444;
   }
 }
+li {
+  margin: 0.2em 0;
+  & > p {
+    margin-top: 0.5em;
+    margin-bottom: 0.2em;
+  }
+}
+table {
+  margin: 12px 0;
+}
+td {
+  vertical-align: top;
+  padding-right: 8px;
+  line-height: 1.4;
+  br {
+    display: block;
+    content: "";
+    margin-bottom: 4px;
+  }
+}
