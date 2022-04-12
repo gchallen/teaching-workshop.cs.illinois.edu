@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 import { ArgumentParser } from "argparse"
+import { exec } from "child-process-promise"
 import chokidar from "chokidar"
-import path from "path"
-import { compile } from "xdm"
+import { emptyDir, mkdirs, remove } from "fs-extra"
 import { readFile, writeFile } from "fs/promises"
-import { mkdirs, emptyDir, remove } from "fs-extra"
-import replaceExt from "replace-ext"
 import glob from "glob-promise"
 import matter from "gray-matter"
-import { exec } from "child-process-promise"
+import path from "path"
 import remarkGfm from "remark-gfm"
+import replaceExt from "replace-ext"
+import { compile } from "xdm"
 
 const parser = new ArgumentParser()
 parser.add_argument("input")

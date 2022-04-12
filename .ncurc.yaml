@@ -1,2 +1,3 @@
 reject:
   - remark-gfm
+  - "@types/react"

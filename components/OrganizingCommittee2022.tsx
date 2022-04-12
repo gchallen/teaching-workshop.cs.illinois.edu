@@ -4,21 +4,15 @@ import LazyLoad from "react-lazyload"
 
 const members = [
   {
-    name: "Geoffrey Challen",
-    position: "Teaching Associate Professor",
-    photo: 74521,
-    link: "https://geoffreychallen.com",
+    name: "Abdu Alawini",
+    position: "Teaching Assistant Professor",
+    photo: 85157,
+    link: "https://alawini.web.illinois.edu/",
   },
   {
     name: "Yael Gertner",
     position: "Teaching Assistant Professor",
     photo: 100582,
-  },
-  {
-    name: "Michael Nowak",
-    position: "Teaching Assistant Professor",
-    photo: 106852,
-    link: "http://nowakphd.com/",
   },
   {
     name: "Brad Solomon",
@@ -27,7 +21,7 @@ const members = [
   },
 ]
 
-const OrganizingCommittee: React.FC = () => {
+const OrganizingCommittee2022: React.FC = () => {
   const contents = useMemo(
     () =>
       members.map(({ name, position, photo, link }, i) => (
@@ -59,4 +53,4 @@ const OrganizingCommittee: React.FC = () => {
   )
   return <div style={{ display: "flex", flexDirection: "column", marginTop: 8, textAlign: "left" }}>{contents}</div>
 }
-export default OrganizingCommittee
+export default OrganizingCommittee2022
